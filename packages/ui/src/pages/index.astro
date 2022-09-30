@@ -1,0 +1,23 @@
+---
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<script>
+			const api = new EventSource('/api');
+
+			api.onmessage = function(event) {
+				const e = document.createElement('p');
+				e.innerText = event.data;
+				document.body.appendChild(e);
+			}
+		</script>
+		<h1>Astro</h1>
+	</body>
+</html>
